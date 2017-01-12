@@ -26,7 +26,7 @@ namespace 数据结构01
              * sum4=101*50
              */
             int n = 100;
-            int sum = (1 + n) * n / 2;
+            int sum = (1 + n) * (n / 2);
             Console.WriteLine(sum);
 
             Console.Read();
