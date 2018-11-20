@@ -15,7 +15,7 @@ namespace 冒泡排序01
             array = AscendingOrder(array);
 
             //降序
-            array = DescendingOrder(array);
+            //array = DescendingOrder(array);
 
             foreach (var item in array)
             {
