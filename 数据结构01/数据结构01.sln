@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "冒泡排序01", "冒泡排
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "内置排序01", "内置排序01\内置排序01.csproj", "{79D0D1EA-05A7-4F6D-A295-FA920D9AA8D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "快速排序01", "快速排序01\快速排序01.csproj", "{110CE931-E95D-4850-953B-D997C551B87B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{79D0D1EA-05A7-4F6D-A295-FA920D9AA8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79D0D1EA-05A7-4F6D-A295-FA920D9AA8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79D0D1EA-05A7-4F6D-A295-FA920D9AA8D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{110CE931-E95D-4850-953B-D997C551B87B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110CE931-E95D-4850-953B-D997C551B87B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110CE931-E95D-4850-953B-D997C551B87B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110CE931-E95D-4850-953B-D997C551B87B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{76B1FF7A-C3F8-4B15-8845-A10E95540657} = {E3478A0D-1C9B-4C41-B91F-32A7DC2125EC}
 		{79D0D1EA-05A7-4F6D-A295-FA920D9AA8D4} = {E3478A0D-1C9B-4C41-B91F-32A7DC2125EC}
+		{110CE931-E95D-4850-953B-D997C551B87B} = {E3478A0D-1C9B-4C41-B91F-32A7DC2125EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0DBBA82-CD8A-4663-BFD3-B93CA5D9F1BA}
