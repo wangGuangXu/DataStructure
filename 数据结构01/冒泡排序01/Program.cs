@@ -33,10 +33,12 @@ namespace 冒泡排序01
         private static int[] AscendingOrder( int[] array)
         {
             int temp = 0;
-            for (int i = 0; i < array.Length - 1; i++)
+            
+            for (int i = 0; i < array.Length - 1; i++)//外层循环每次把参与排序的最大数排在最后
             {
-                for (int j = 0; j < array.Length - 1 - i; j++)
+                for (int j = 0; j < array.Length - 1 - i; j++)//内层循环负责对比相邻的两个数，并把大的排在后面
                 {
+                    //如果前一个数大于后一个数，则交换两个数
                     if (array[j] > array[j + 1])
                     {
                         temp = array[j + 1];
