@@ -11,8 +11,10 @@ namespace 快速排序01
         {
             int[] array = new int[] { 40, 4, 99, 101, 24, 78, 77, 33, 5 };
 
-            QuickSort(array, 0, array.Length - 1);//快速排序
+            //快速排序
+            QuickSort(array, 0, array.Length - 1);
 
+            //打印排序后的数组
             foreach (var item in array)
             {
                 Console.WriteLine(item);
