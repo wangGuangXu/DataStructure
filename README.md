@@ -1,5 +1,6 @@
 # 数据结构概览
 [markdown语法](https://blog.csdn.net/blueamertj/article/details/51556308)
+[数据结构1](https://www.cnblogs.com/huangxincheng/category/340146.html)
 
 ## 1. 排序   
 ### 1.1 交换排序
