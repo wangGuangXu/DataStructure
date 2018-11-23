@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "插入排序", "插入排�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "直接插入排序", "直接插入排序\直接插入排序.csproj", "{8D893161-8276-4B33-A511-477E2F81F985}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "希尔排序", "希尔排序\希尔排序.csproj", "{4B916335-3776-4A5E-ACF5-3993D587DECE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{8D893161-8276-4B33-A511-477E2F81F985}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D893161-8276-4B33-A511-477E2F81F985}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D893161-8276-4B33-A511-477E2F81F985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B916335-3776-4A5E-ACF5-3993D587DECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B916335-3776-4A5E-ACF5-3993D587DECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B916335-3776-4A5E-ACF5-3993D587DECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B916335-3776-4A5E-ACF5-3993D587DECE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{1BC412D2-C348-44F9-919C-B578C3D995B2} = {E3478A0D-1C9B-4C41-B91F-32A7DC2125EC}
 		{05ACD8FF-F85B-4231-8BE9-714F62D7734E} = {E3478A0D-1C9B-4C41-B91F-32A7DC2125EC}
 		{8D893161-8276-4B33-A511-477E2F81F985} = {05ACD8FF-F85B-4231-8BE9-714F62D7734E}
+		{4B916335-3776-4A5E-ACF5-3993D587DECE} = {05ACD8FF-F85B-4231-8BE9-714F62D7734E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0DBBA82-CD8A-4663-BFD3-B93CA5D9F1BA}

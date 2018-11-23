@@ -37,6 +37,7 @@ namespace 直接插入排序
                 {
                     numbers[j + 1] = numbers[j];
                 }
+
                 numbers[j + 1] = temp;
             }
         }
