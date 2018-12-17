@@ -9,6 +9,8 @@ namespace 直接插入排序01
     {
         static void Main(string[] args)
         {
+            //直接插入排序适用于数据量较少的排序
+
             //待排序序列
             //int[] R = InsertSortV1();
 
