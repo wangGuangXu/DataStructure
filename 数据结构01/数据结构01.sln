@@ -37,6 +37,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "归并排序", "归并排�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "二路归并排序01", "二路归并排序01\二路归并排序01.csproj", "{9C202043-9975-4398-9A82-964FE44EAFB7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "字符串", "字符串", "{272D386C-3007-463F-AD71-2AC02E0BC643}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brute-Force(简单匹配算法)", "Brute-Force(简单匹配算法)\Brute-Force(简单匹配算法).csproj", "{0244B388-F939-48BC-AF0F-91AA1732A610}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +83,10 @@ Global
 		{9C202043-9975-4398-9A82-964FE44EAFB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C202043-9975-4398-9A82-964FE44EAFB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C202043-9975-4398-9A82-964FE44EAFB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0244B388-F939-48BC-AF0F-91AA1732A610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0244B388-F939-48BC-AF0F-91AA1732A610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0244B388-F939-48BC-AF0F-91AA1732A610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0244B388-F939-48BC-AF0F-91AA1732A610}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +105,7 @@ Global
 		{9EB1199A-27E8-4E7F-8163-5430079007FA} = {DF6A2011-EBDE-48B4-A143-7E342B587FB7}
 		{72A6B119-1040-4124-A739-D314B8570F46} = {E3478A0D-1C9B-4C41-B91F-32A7DC2125EC}
 		{9C202043-9975-4398-9A82-964FE44EAFB7} = {72A6B119-1040-4124-A739-D314B8570F46}
+		{0244B388-F939-48BC-AF0F-91AA1732A610} = {272D386C-3007-463F-AD71-2AC02E0BC643}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0DBBA82-CD8A-4663-BFD3-B93CA5D9F1BA}
