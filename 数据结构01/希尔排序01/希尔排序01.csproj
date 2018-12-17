@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8D893161-8276-4B33-A511-477E2F81F985}</ProjectGuid>
+    <ProjectGuid>{A1D55783-745C-4320-8FA4-2E3C29D3D8B4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>直接插入排序</RootNamespace>
-    <AssemblyName>直接插入排序</AssemblyName>
+    <RootNamespace>希尔排序01</RootNamespace>
+    <AssemblyName>希尔排序01</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

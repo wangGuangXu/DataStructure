@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace 直接插入排序
+namespace 直接插入排序02
 {
     class Program
     {
@@ -12,11 +12,11 @@ namespace 直接插入排序
             var numbers = new List<int>() { 3, 1, 5, 90, 32, 78, 22 };
 
             //排序前
-            Console.WriteLine("排序前："+string.Join(",",numbers));
+            Console.WriteLine("排序前：" + string.Join(",", numbers));
 
             InsertSort(numbers);
 
-            Console.WriteLine("排序后："+string.Join(",",numbers));
+            Console.WriteLine("排序后：" + string.Join(",", numbers));
 
             Console.ReadKey();
         }
@@ -33,7 +33,7 @@ namespace 直接插入排序
                 int j;
 
                 //有序序列
-                for (j = i-1; j>=0 && temp < numbers[j]; j--)
+                for (j = i - 1; j >= 0 && temp < numbers[j]; j--)
                 {
                     numbers[j + 1] = numbers[j];
                 }
