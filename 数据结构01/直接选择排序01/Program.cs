@@ -39,7 +39,6 @@ namespace 直接选择排序01
             {
                 Console.WriteLine(item);
             }
-
             Console.ReadKey();
         }
     }
