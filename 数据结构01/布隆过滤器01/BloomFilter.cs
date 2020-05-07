@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -12,21 +13,24 @@ namespace 布隆过滤器01
     /// 布隆过滤器
     /// 参考资料：https://www.cnblogs.com/wgx0428/
     /// </summary>
-    public class BloomFilter
+    public class BloomFilter<T>
     {
+        /// <summary>
+        /// 一个很长的二进制向量 （位数组）
+        /// </summary>
         public BitArray _bloomArray;
         /// <summary>
-        /// 布隆数组长度
+        /// 布隆过滤器的大小
         /// </summary>
         public Int64 BloomArrayLength { get; }
         /// <summary>
-        /// 数据数组长度
+        /// 数据集合的大小
         /// </summary>
         public Int64 DataArrayLength { get; }
         /// <summary>
         /// hash函数个数（散列表或者哈希表）
         /// </summary>
-        public Int64 BitIndexCount { get; }
+        public Int64 HashFunctionCount { get; }
 
         /// <summary>
         /// 布隆过滤器（Bloom Filter）
@@ -34,30 +38,45 @@ namespace 布隆过滤器01
         /// <param name="bloomArrayLength">布隆数组长度</param>
         /// <param name="dataArrayLength">数据数组长度</param>
         /// <param name="bitIndexCount">hash函数个数（散列表或者哈希表）</param>
-        public BloomFilter(int bloomArrayLength, Int64 dataArrayLength,Int64 bitIndexCount)
+        public BloomFilter(int bloomArrayLength, Int64 dataArrayLength,Int64 hashFunctionCount)
         {
             //1.初始化长度为bloomArrayLength的位数组
             _bloomArray = new BitArray(bloomArrayLength);
 
             this.BloomArrayLength = bloomArrayLength;
             this.DataArrayLength = dataArrayLength;
-            this.BitIndexCount = bitIndexCount;
+            this.HashFunctionCount = hashFunctionCount;
+        }
+
+        /// <summary>
+        /// 自动计算需要多少哈希函数(散列表)的布隆过滤器（推荐）
+        /// </summary>
+        /// <param name="bloomArrayLength"></param>
+        /// <param name="dataArrayLength"></param>
+        public BloomFilter(int bloomArrayLength, int dataArrayLength)
+        {
+            //1.初始化长度为bloomArrayLength的位数组
+            _bloomArray = new BitArray(bloomArrayLength);
+
+            this.BloomArrayLength = bloomArrayLength;
+            this.DataArrayLength = dataArrayLength;
+            this.HashFunctionCount = OptimalNumberOfHashes(bloomArrayLength, dataArrayLength);
         }
 
         /// <summary>
         /// 添加
         /// </summary>
-        /// <param name="str">字符串</param>
-        public void Add(string str)
+        /// <param name="item">可以是字符串或者对象</param>
+        public void Add(T item)
         {
             //计算字符串的哈希值
-            int hashValue = str.GetHashCode();
+            int hashValue = item.GetHashCode();
 
             //将哈希值种子放进随机函数
             var random = new Random(hashValue);
 
             //2.将结果分别映射到位数组中，并设置对应位结果位1
-            for (int i = 0; i < BitIndexCount; i++)
+            for (int i = 0; i < HashFunctionCount; i++)
             {
                 //返回哈希值映射的位数组索引
                 int randomIndex = random.Next((int)BloomArrayLength - 1);
@@ -70,14 +89,14 @@ namespace 布隆过滤器01
         /// <summary>
         /// 是否存在
         /// </summary>
-        /// <param name="str">字符串</param>
+        /// <param name="item">可以是字符串或者对象</param>
         /// <returns></returns>
-        public bool Exists(string str)
+        public bool Exists(T item)
         {
-            int hashValue = str.GetHashCode();
+            int hashValue = item.GetHashCode();
             var random = new Random(hashValue);
 
-            for (int i = 0; i < BitIndexCount; i++)
+            for (int i = 0; i < HashFunctionCount; i++)
             {
                 if (_bloomArray[random.Next((int)BloomArrayLength - 1)] == false)
                 {
@@ -88,14 +107,34 @@ namespace 布隆过滤器01
         }
 
         /// <summary>
-        /// 获取误误概率
+        /// 获取误报概率
         /// 说某个值不存在集合中一定不存在，说某个字符在集合中它可能存在。原因在于可能两个值或者多个值映射的是同一索引位导致这种现象。
         /// </summary>
         /// <returns></returns>
         public double GetFalsePositiveProbability()
         {
-            // (1 - e^(-k * n / m)) ^ k
-            return Math.Pow((1 - Math.Exp(-BitIndexCount * (double)DataArrayLength / BloomArrayLength)), BitIndexCount);
+            /* m：布隆过滤器的大小个数
+             * n：集合个数
+             * k：哈希函数个数
+             * 误报概率计算公式=(1 - e^(-k * n / m)) ^ k 
+             * 
+             * Math.Pow（x,y）计算x的y次方
+             * Math.Pow(底数,几次方) 例子：Math.Pow(3,3)=27
+             * Math.Exp() 计算指数值
+             * 
+             */
+            return Math.Pow(1 - Math.Exp(-HashFunctionCount * (double)DataArrayLength / BloomArrayLength), HashFunctionCount);
+        }
+
+        /// <summary>
+        /// 计算基于布隆过滤器散列的最佳数量
+        /// </summary>
+        /// <param name="bloomArraySize">布隆过滤器的大小(m)</param>
+        /// <param name="dataArraySize">集合的大小 (n)</param>
+        /// <returns></returns>
+        public int OptimalNumberOfHashes(int bloomArraySize,int dataArraySize)
+        {
+            return (int)Math.Ceiling((bloomArraySize / dataArraySize) * Math.Log(2.0));
         }
     }
 }
