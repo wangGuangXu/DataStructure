@@ -13,6 +13,7 @@ namespace 布隆过滤器01
     /// <summary>
     /// 布隆过滤器
     /// 参考资料：https://www.cnblogs.com/wgx0428/
+    /// https://blog.csdn.net/WuLex/article/details/51897150?locationNum=11
     /// </summary>
     public class BloomFilter<T>
     {
