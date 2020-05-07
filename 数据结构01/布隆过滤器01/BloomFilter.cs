@@ -88,7 +88,8 @@ namespace 布隆过滤器01
         }
 
         /// <summary>
-        /// 获取错误概率
+        /// 获取误误概率
+        /// 说某个值不存在集合中一定不存在，说某个字符在集合中它可能存在。原因在于可能两个值或者多个值映射的是同一索引位导致这种现象。
         /// </summary>
         /// <returns></returns>
         public double GetFalsePositiveProbability()
