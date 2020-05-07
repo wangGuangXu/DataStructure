@@ -15,7 +15,7 @@ namespace 布隆过滤器01
         static void Main(string[] args)
         {
             //五千万条数据
-            var bloomFilter = new BloomFilter(200000000, 500, 3);
+            var bloomFilter = new BloomFilter(200000000, 50000000, 3);
 
             //添加5千万个数做测试
             for (int i = 0; i < bloomFilter.DataArrayLength; i++)
