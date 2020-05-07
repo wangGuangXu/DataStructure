@@ -2,6 +2,7 @@
 using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -64,13 +65,23 @@ namespace 布隆过滤器01
         }
 
         /// <summary>
+        /// 获取哈希码
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        private int GetHashCode(T item)
+        {
+            return item.GetHashCode();
+        }
+
+        /// <summary>
         /// 添加
         /// </summary>
         /// <param name="item">可以是字符串或者对象</param>
         public void Add(T item)
         {
             //计算字符串的哈希值
-            int hashValue = item.GetHashCode();
+            int hashValue = GetHashCode(item);
 
             //将哈希值种子放进随机函数
             var random = new Random(hashValue);
@@ -93,12 +104,47 @@ namespace 布隆过滤器01
         /// <returns></returns>
         public bool Exists(T item)
         {
-            int hashValue = item.GetHashCode();
+            int hashValue = GetHashCode(item);
             var random = new Random(hashValue);
 
             for (int i = 0; i < HashFunctionCount; i++)
             {
                 if (_bloomArray[random.Next((int)BloomArrayLength - 1)] == false)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 检查列表中的任何项是否可能是在集合
+        /// 如果布隆过滤器包含列表中的任何一项，返回真
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
+        public bool ExistsAny(List<T> items)
+        {
+            foreach (T item in items)
+            {
+                if (Exists(item))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 检查列表中的所有项目是否都在集合
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
+        public bool ExistsAll(List<T> items)
+        {
+            foreach (T item in items)
+            {
+                if (Exists(item)==false)
                 {
                     return false;
                 }
