@@ -50,12 +50,17 @@ namespace 冒泡排序01
             return array;
         }
 
+        /// <summary>
+        /// 升序
+        /// </summary>
+        /// <param name="arrays"></param>
+        /// <returns></returns>
         private static int[] Ascending(int[] arrays)
         {
-            //外层循环控制循环多少趟  N个数字要排序完成，总共进行N-1趟排序，每i趟的排序次数为(N-i)次
+            //外层循环控制循环多少趟，例如6个数字就需要6-1趟，此处为i<array.Length就相当于小于6的数字是5所以此处是5趟
             for (int i = 0; i < arrays.Length; i++)
             {
-                //内层循环控制每一趟的循环次数
+                //内层循环控制每一趟的循环次数  N个数字要排序完成，总共进行N-1趟排序，每i趟的排序次数为(N-i)次
                 for (int j = 0; j < arrays.Length - i - 1; j++)
                 {
                     //交换位置
